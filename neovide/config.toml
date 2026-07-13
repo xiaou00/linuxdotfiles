@@ -1,0 +1,6 @@
+[font]
+normal = ["JetBrains Mono"]
+size = 12
+
+[neovide]
+font-antialias = false

@@ -1,0 +1,28 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export PYENV_ROOT:/home/xiaou0/\x2epyenv
+SETUVAR __fish_initialized:4300
+SETUVAR fish_color_autosuggestion:565656
+SETUVAR fish_color_command:44bbbb
+SETUVAR fish_color_comment:565656
+SETUVAR fish_color_cwd:44bbbb
+SETUVAR fish_color_cwd_root:ff6464
+SETUVAR fish_color_end:e77726
+SETUVAR fish_color_error:ff6464
+SETUVAR fish_color_escape:bd5e91
+SETUVAR fish_color_host:44bbbb
+SETUVAR fish_color_host_remote:00c3a5
+SETUVAR fish_color_keyword:ff8548
+SETUVAR fish_color_match:\x2d\x2dbackground\x3d2c2c2c
+SETUVAR fish_color_normal:d3d3d3
+SETUVAR fish_color_operator:e77726
+SETUVAR fish_color_param:d3d3d3
+SETUVAR fish_color_quote:76c793
+SETUVAR fish_color_redirection:00c3a5
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3d333333
+SETUVAR fish_color_user:76c793
+SETUVAR fish_pager_color_completion:d3d3d3
+SETUVAR fish_pager_color_description:565656
+SETUVAR fish_pager_color_prefix:ff8548
+SETUVAR fish_pager_color_progress:e77726
+SETUVAR fish_user_paths:/home/xiaou0/\x2epyenv/bin\x1e/home/xiaou0/\x2ecargo/bin

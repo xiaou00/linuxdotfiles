@@ -1,0 +1,98 @@
+keybindings:
+  back: q
+  next_page: ctrl-d
+  previous_page: ctrl-u
+  jump_to_start: ctrl-a
+  jump_to_end: ctrl-e
+  jump_to_album: a
+  jump_to_artist_album: A
+  jump_to_context: o
+  manage_devices: d
+  decrease_volume: '-'
+  increase_volume: +
+  toggle_playback: space
+  seek_backwards: <
+  seek_forwards: '>'
+  next_track: n
+  previous_track: p
+  force_previous_track: P
+  help: '?'
+  shuffle: ctrl-s
+  repeat: ctrl-r
+  search: /
+  submit: enter
+  copy_song_url: c
+  copy_album_url: C
+  audio_analysis: v
+  lyrics_view: B
+  miniplayer_view: T
+  cover_art_view: G
+  add_item_to_queue: z
+  show_queue: Q
+  open_settings: alt-,
+  save_settings: alt-s
+  listening_party: ctrl-p
+  like_track: F
+  generate_recap: R
+behavior:
+  seek_milliseconds: 5000
+  volume_increment: 10
+  volume_percent: 60
+  tick_rate_milliseconds: 250
+  animation_tick_rate_milliseconds: 16
+  enable_text_emphasis: true
+  show_loading_indicator: true
+  enforce_wide_search_bar: false
+  enable_global_song_count: false
+  disable_mouse_inputs: false
+  enable_discord_rpc: true
+  discord_rpc_client_id: null
+  enable_announcements: true
+  announcement_feed_url: null
+  seen_announcement_ids:
+  - 2026-02-27-major-refactor-complete
+  - 2026-05-19-sonos-help-wanted
+  - 2026-06-12-self-update-broken
+  - 2026-06-12-lua-scripting
+  shuffle_enabled: true
+  liked_icon: ♥
+  shuffle_icon: 🔀
+  repeat_track_icon: 🔂
+  repeat_context_icon: 🔁
+  playing_icon: ▶
+  paused_icon: ⏸
+  set_window_title: true
+  visualizer_style: Equalizer
+  dismissed_announcements: []
+  relay_server_url: wss://spotatui-party.spotatui.workers.dev/ws
+  stop_after_current_track: false
+  sidebar_width_percent: 20
+  playbar_height_rows: 6
+  library_height_percent: 30
+  startup_behavior: pause
+  disable_auto_update: false
+  auto_update_delay: '0'
+  draw_cover_art: true
+  draw_cover_art_forced: false
+  playbar_cover_art_size_percent: 100
+  keepawake_enabled: true
+  sync_token: null
+theme:
+  preset: Custom
+  active: 34, 170, 238
+  banner: 34, 170, 238
+  error_border: 200, 0, 0
+  error_text: 255, 38, 38
+  hint: 200, 200, 0
+  hovered: 255, 38, 38
+  inactive: 128, 128, 128
+  playbar_background: Reset
+  playbar_progress: 34, 170, 238
+  playbar_progress_text: 255, 255, 255
+  playbar_text: Reset
+  selected: 34, 170, 238
+  text: Reset
+  background: Reset
+  header: Reset
+  highlighted_lyrics: 0, 200, 200
+plugin_commands: null

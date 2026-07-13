@@ -1,0 +1,44 @@
+
+==== spotatui panic ====
+panicked at src/tui/cover_art.rs:33:45:
+called `Result::unwrap()` on an `Err` value: Io(Os { code: 25, kind: Uncategorized, message: "Inappropriate ioctl for device" })
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: __libc_start_main
+  16: <unknown>
+
+
+==== spotatui panic ====
+panicked at src/tui/cover_art.rs:33:45:
+called `Result::unwrap()` on an `Err` value: Io(Os { code: 25, kind: Uncategorized, message: "Inappropriate ioctl for device" })
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: __libc_start_main
+  16: <unknown>
+

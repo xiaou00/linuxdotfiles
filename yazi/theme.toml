@@ -1,0 +1,45 @@
+[manager]
+cwd = { fg = "#44bbbb" }
+hovered = { fg = "#101212", bg = "#44bbbb" }
+preview_hovered = { fg = "#101212", bg = "#44bbbb" }
+find_keyword = { fg = "#44bbbb", bold = true }
+find_position = { fg = "#ffdd44", bg = "reset", bold = true }
+marker_copied = { fg = "#44bbbb", bg = "#44bbbb" }
+marker_cut = { fg = "#ff4444", bg = "#ff4444" }
+marker_marked = { fg = "#ffdd44", bg = "#ffdd44" }
+marker_selected = { fg = "#44bbbb", bg = "#44bbbb" }
+
+[status]
+separator_open = { fg = "#44bbbb", bg = "#101212" }
+separator_close = { fg = "#44bbbb", bg = "#101212" }
+mode_normal = { fg = "#101212", bg = "#44bbbb", bold = true }
+mode_select = { fg = "#101212", bg = "#ffdd44", bold = true }
+mode_unset = { fg = "#101212", bg = "#ff4444", bold = true }
+
+[tabs]
+active = { fg = "#101212", bg = "#44bbbb", bold = true }
+inactive = { fg = "#d3d3d3", bg = "#202028" }
+
+[which]
+mask = { bg = "#101212" }
+cand = { fg = "#44bbbb" }
+rest = { fg = "#808080" }
+desc = { fg = "#d3d3d3" }
+separator = "  "
+separator_style = { fg = "#565656" }
+
+[input]
+border = { fg = "#44bbbb" }
+selected = { reversed = true }
+
+[completion]
+border = { fg = "#44bbbb" }
+
+[tasks]
+border = { fg = "#44bbbb" }
+
+[help]
+on = { fg = "#44bbbb" }
+run = { fg = "#44bbbb" }
+hovered = { fg = "#101212", bg = "#44bbbb" }
+footer = { fg = "#101212", bg = "#44bbbb" }

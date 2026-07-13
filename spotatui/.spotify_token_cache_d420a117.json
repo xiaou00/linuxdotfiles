@@ -1,0 +1,7 @@
+{
+  "access_token": "BQAb3Evl6nLPfWy0Op4JeRo7Qy2q9ME3JRgFFsS409TCoGMGY2Bc2QgU5Pn_cfWit_iSr_NzBv38gHDTvDHN79QiWrEVcLEz6OvN2ymeTvYbO4YYorHhJokkWer-GG-zDHXMRLtlOLqqhxMBjJuuWosYMvNJPgqzNotWCHSWTP-dC-84bOjr5R7WCSwxNf1CmHKOHkCvQ0VWAMqCVS1yN9Gci3AAF2wiJxmTudKm_TsAgw6_nQjTekDm-t8x6DgWrZqxTkUg_3S-UNbVPGsilf0HoMosbAip7sx_nQgMiubGw0XStfuxKbfVTbrQx62aIU8fB4FaJCEBtINzCx0ZnZrhuQpcdKT0s2VM4gx9qyWCE32s3k6L6qQNnfdjDu08keWYOCGsvg",
+  "expires_in": 3600,
+  "expires_at": "2026-06-20T07:10:19.112796288Z",
+  "refresh_token": "AQDe7SPZ6DBwshXwvpbqikxQleNg05NsfMwDl3_GRc5W0MEccKjYkz8UxmgCymFWDYb4Zlv4J-Oev0y6QyzBkqTmNZXNgf-RcpuWgiNBsIeMfMeSxD7h97DmElqDzX7LV8TV6A",
+  "scope": "playlist-read-private user-follow-modify user-read-private user-read-playback-state user-read-currently-playing user-modify-playback-state user-read-recently-played playlist-modify-private user-top-read user-read-playback-position user-library-modify user-library-read playlist-read-collaborative streaming playlist-modify-public user-follow-read"
+}

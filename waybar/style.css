@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: JetBrainsMono NF;
+    font-size: 14px;
+    font-weight: 900;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(13, 18, 18, 0.9);
+}
+
+/* Remove default module group backgrounds */
+.modules-left,
+.modules-center,
+.modules-right {
+}
+
+/* Base module styling - transparent pills */
+.module {
+    border-radius: 12px;
+
+    padding: 0px 12px;
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+    font-weight: 900;
+}
+
+/* Individual module styling with Catppuccin Mocha colors */
+#custom-launcher {
+    background: rgba(0,0,0,0);
+    color: #ff4444;
+    font-size: 18px;
+    padding-left: 14px;
+    padding-right: 19px;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#custom-launcher:hover {
+    background: rgba(0,0,0,0);
+}
+
+#cpu {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#memory {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+#custom-window-name {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+    font-weight: 900;
+}
+
+#custom-pacman-update-icon {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 0px 10px;
+}
+
+#custom-pacman-update {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#tray {
+    background: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0);
+    padding: 0px 8px;
+}
+
+/* Workspaces styling */
+#workspaces {
+    background: rgba(0,0,0,0);
+    border-radius: 16px;
+    padding-right: 12px;
+    padding-left: 6px;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#workspaces button {
+    background: transparent;
+    color: #d3d3d3;
+    border-radius: 10px;
+    padding: 0px 4px;
+    margin: 0px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: #44bbbb;
+}
+
+#workspaces button:hover {
+    color: #44bbbb;
+}
+
+#workspaces button.urgent {
+    color: #44bbbb;
+}
+
+/* Right side modules */
+#idle_inhibitor {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#idle_inhibitor.activated {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#battery {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#battery.warning {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0); 
+}
+
+#battery.critical {
+    background: rgba(0,0,0,0);
+    color: #ff4444;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#battery.charging {
+    background: rgba(0,0,0,0);
+    color: #44bbbb;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#backlight {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#custom-wl-gammarelay-temperature {
+    background: rgba(0, 0, 0, 0.3);
+    color: #bd5e91;
+    border: 1px solid rgba(189, 94, 145, 0.3);
+}
+
+#pulseaudio {
+    font-weight: 900;
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+#pulseaudio.muted {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#network {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#network.disconnected {
+    background: rgba(0,0,0,0);
+    color: #ff4444;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#clock {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+    font-weight: 900;
+    padding: 0px 14px;
+}
+
+/* Music module */
+#custom-music {
+    background: rgba(0,0,0,0);
+    color: #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 12px;
+    padding: 0px 12px;
+}
+
+#custom-music.Playing {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(231, 119, 38, 0.4);
+    font-weight: 900;
+}
+
+#custom-music.Paused,
+#custom-music.Stopped {
+    background: rgba(0, 0, 0, 0.3);
+    color: #565656;
+    border: 1px solid rgba(86, 86, 86, 0.4);
+}
+
+/* Hover effects for interactive modules */
+#custom-launcher:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#backlight:hover,
+#custom-wl-gammarelay-temperature:hover,
+#pulseaudio:hover,
+#network:hover,
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#custom-pacman-update-icon:hover,
+#custom-music:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip styling */
+tooltip {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(231, 119, 38, 0.3);
+    border-radius: 8px;
+    color: #d3d3d3;
+}
+
+tooltip label {
+    color: #d3d3d3;
+    padding: 0px 4px;
+}

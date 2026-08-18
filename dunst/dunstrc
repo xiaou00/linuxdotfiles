@@ -1,0 +1,135 @@
+[global]
+   
+    ### Display ###
+
+    # Display notifications on monitor with mouse focus
+    follow = none
+    # Notification width
+    width = 320
+    height = (0, 160)
+    # Align with the outer Hyprland/Waybar gap.
+    origin = top-right
+    offset = (7, 45)
+    # Show number of hidden notifications
+    indicate_hidden = yes
+    # Set transparency of notifications
+    transparency = 15
+    # Height of seperators
+    separator_height = 0
+    gap_size = 4
+    # Text and seperator padding
+    padding = 7
+    # Horizontal padding
+    horizontal_padding = 9
+    # Width of frame around window (color set per urgency)
+    frame_width = 1
+    separator_color = frame
+    progress_bar = false
+    # Sort messages by urgency
+    sort = yes
+    # Idle seconds
+    idle_threshold = 0
+
+    ### Text ###
+    
+    # Set font of notifications
+    font = JetBrains Mono 10
+    # Spacing between lines
+    line_height = 2
+    # Markup parsing
+    markup = full
+    # Message format:
+    # %a - appname
+    # %s - summary
+    # %b - body
+    # %i - iconname (with path)
+    # %I - iconname (without path)
+    # %p - progress value (if set)
+    # %n - progress value no extra characters
+    # %% - literal %
+    format = "<span foreground='#ff4444'>&gt;</span> <b>%s</b>\n  %b"
+    # Align message text horizontally
+    alignment = left
+    # Align message text vertically
+    vertical_alignment = center
+    # Show age of message if message is older than x seconds
+    show_age_threshold = -1
+    # Split notifications into multiple lines
+    word_wrap = yes
+    # If message too long, add ellipsize to...
+    ellipsize = end
+    # Ignore newlines in notifications
+    ignore_newline = no
+    # Stack duplicate notifications
+    stack_duplicates = true
+    # Hide number of duplicate notifications
+    hide_duplicate_count = true
+    # Show indicatiors  for urls and actions
+    show_indicators = no
+   
+    ### Icons ###
+    
+    # Disable icons
+    icon_position = off
+
+    ### History ###
+    
+    # Length of history
+    history_length = 20
+    
+    ### Misc ###
+    
+    # Dmenu path
+    dmenu = /usr/bin/wofi --dmenu --prompt "action >"
+    # Browser
+    browser = /usr/bin/firefox -new-tab
+    # Always run scripts
+    always_run_script = false
+    # Title of notification
+    title = Dunst
+    # Notification class
+    class = Dunst
+    # Corner radius of dunst
+    corner_radius = 5
+    # Ignore dbus closeNotification message
+    ignore_dbusclose = false
+
+    ### Mouse ###
+
+    # Left click
+    mouse_left_click = close_current
+    # Middle click
+    mouse_middle_click = do_action
+    # Right click
+    mouse_right_click = do_action
+
+    # Keyboard shortcuts
+    close = ctrl+space
+    close_all = ctrl+shift+space
+
+[urgency_low]
+
+    background = "#151515"
+    foreground = "#d0d0d0"
+    frame_color = "#ff4444"
+    format = "<span foreground='#888888'>·</span> <b>%s</b>\n  %b"
+    timeout = 4
+    script = "/home/xiaou0/.config/dunst/notify-sound.sh"
+
+[urgency_normal]
+
+    background = "#151515"
+    foreground = "#d0d0d0"
+    frame_color = "#ff4444"
+    format = "<span foreground='#ff4444'>&gt;</span> <b>%s</b>\n  %b"
+    timeout = 5
+    script = "/home/xiaou0/.config/dunst/notify-sound.sh"
+
+[urgency_critical]
+
+    background = "#151515"
+    foreground = "#d0d0d0"
+    frame_color = "#ff4444"
+    format = "<span foreground='#ff4444'><b>!</b></span> <b>%s</b>\n  %b"
+    timeout = 0
+    script = "/home/xiaou0/.config/dunst/notify-sound.sh"

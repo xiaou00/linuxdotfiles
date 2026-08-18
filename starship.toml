@@ -1,22 +1,31 @@
-format = """[](fg:#44bbbb)\
-$os\
-[](bg:#44bbbb fg:#d3d3d3)\
+palette = "global"
+format = """[┌─](muted) \
+${custom.arch}\
 $username\
-[](bg:#d3d3d3 fg:#ff4444)\
+[ :: ](muted)\
 $directory\
-[ ](fg:#ff4444)\
+[ ](muted)\
 $git_branch\
 $git_status\
-$character"""
+[\n└─](muted) \
+${custom.prompt}"""
+
+[palettes.global]
+bg = "#151515"
+surface = "#242424"
+fg = "#f2f2f2"
+muted = "#888888"
+accent = "#ff4444"
 
 [username]
 show_always = true
-format = '[$user ](bg:#d3d3d3 fg:#1e1e1e)'
+format = '[$user](bold fg)'
 disabled = false
 
 [os]
-disabled = false
-style = 'bg:#44bbbb fg:#1e1e1e'
+disabled = true
+style = 'bold accent'
+format = '[$symbol]($style)'
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
@@ -65,17 +74,27 @@ Void = " "
 Windows = "󰍲 "
 
 [cmd_duration]
-format = "[$duration](fg:#ff4444)"
+format = "[$duration](fg:accent)"
 
 [directory]
-format = "[$path](bg:#ff4444 fg:#1e1e1e)"
+format = "[$path](bold muted)"
 truncation_length = 2
 truncation_symbol = "…/"
 
 [character]
-success_symbol = "[](bold #44bbbb)"
-error_symbol = "[✗](bold #ff6464)"
-disabled = false
+success_symbol = "[❯](bold accent)"
+error_symbol = "[×](bold accent)"
+disabled = true
+
+[custom.prompt]
+command = 'test "$TERM" = linux && printf ">" || printf "❯"'
+when = true
+format = '[$output](bold accent)'
+
+[custom.arch]
+command = 'test "$TERM" = linux && printf "(Arch)" || printf ""'
+when = true
+format = '[$output](bold accent) '
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -90,6 +109,7 @@ format = '[$symbol($version)]($style)'
 
 [git_branch]
 symbol = "  "
+style = 'bold accent'
 format = '[$symbol($branch) ($version)]($style)'
 
 [git_commit]

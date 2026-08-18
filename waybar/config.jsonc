@@ -1,142 +1,121 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 0,
-  "margin-top": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  "margin-bottom": 0,
+  "height": 30,
   "spacing": 0,
+  "margin-top": 7,
+  "margin-right": 7,
+  "margin-bottom": 1,
+  "margin-left": 7,
+  "reload_style_on_change": true,
+
   "modules-left": [
     "custom/launcher",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
     "cpu",
     "memory",
-    "custom/window-name",
-    "custom/pacman-update",
-    "tray",
-  ],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": [
-    "battery",
-    // "custom/wl-gammarelay-temperature",
-    "pulseaudio",
     "network",
-    "clock",
+    "pulseaudio",
+    "battery",
+    "tray"
   ],
-  "custom/wl-gammarelay-temperature": {
-    "format": "{} ",
-    "exec": "wl-gammarelay-rs watch {t}",
-    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
-    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100",
+
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wofi -n --show drun"
   },
+
   "hyprland/workspaces": {
+    "format": "{name}",
     "all-outputs": true,
     "active-only": false,
     "on-click": "activate",
-    "format": "{icon}",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "urgent": "",
-      "active": "",
-      "default": "",
-    },
-  },
-  "tray": {
-    "icon-size": 20,
-    "spacing": 8,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
   },
 
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": " ",
-      "deactivated": " ",
+  "hyprland/window": {
+    "format": "  {title}",
+    "rewrite": {
+      "": "  --"
     },
+    "separate-outputs": true,
+    "max-length": 52,
+    "tooltip": false
   },
 
   "clock": {
     "interval": 1,
-    "format": "󱑅 <b>{:%I:%M:%S %p}</b>",
-    "format-alt": "󱑅 <b>{:%a.%d,%b}</b>",
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "  {:%H:%M:%S  %Y-%m-%d}",
+    "format-alt": "  {:%A  %d %B %Y}",
+    "tooltip-format": "<tt>{calendar}</tt>"
   },
+
   "cpu": {
-    "interval": 5,
-    "format": " {usage}%",
-    "max-length": 10,
-    "tooltip": false,
+    "interval": 2,
+    "format": "CPU  {usage:>2}%",
+    "tooltip": false
   },
+
   "memory": {
-    "interval": 30,
-    "format": " {used}GiB",
-    "format-alt": " {used:0.1f}G",
-    "max-length": 10,
+    "interval": 5,
+    "format": "MEM  {percentage:>2}%",
+    "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB"
   },
-  "backlight": {
-    "format": "{icon} {percent}",
-    "tooltip": false,
-    "format-icons": ["󰃚 ", "󰃛 ", "󰃜 ", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "],
-  },
+
   "network": {
-    "format-wifi": "  {essid}",
-    "on-click": "iwgtk",
-    "format-ethernet": "󰈀 wired",
-    "tooltip": false,
-    "format-disconnected": "󰖪",
+    "interval": 3,
+    "format-wifi": "NET  {signalStrength:>3}%",
+    "format-ethernet": "NET  LAN",
+    "format-linked": "NET  LINK",
+    "format-disconnected": "NET  DOWN",
+    "tooltip-format-wifi": "{essid}\n{ipaddr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
+    "on-click": "iwgtk"
   },
+
   "pulseaudio": {
-    "format": "{icon} <b>{volume}</b>",
-    "format-bluetooth": " <b>{volume}</b>",
-    "format-bluetooth-muted": " ",
-    "tooltip": false,
-    "format-muted": " ",
+    "format": "VOL  {volume:>3}%",
+    "format-muted": "VOL  MUT",
+    "format-bluetooth": "BT   {volume:>3}%",
+    "format-bluetooth-muted": "BT   MUT",
     "format-icons": {
-      "default": ["󰕿 ", "󰖀 ", "󰕾 "],
+      "default": ["", "", ""]
     },
-    "on-click": "pavucontrol",
-  },
-  "battery": {
-    "interval": 30,
-    "states": {
-      "warning": 30,
-      "critical": 15,
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {icon} {capacity}%",
-    // "format-icons": [" ", " ", " ", " "],
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "max-length": 25,
     "tooltip": false,
+    "scroll-step": 2,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
 
-  "custom/launcher": {
-    "format": "",
-    "on-click": "rofi -show drun",
+  "battery": {
+    "bat": "BAT1",
+    "adapter": "ACAD",
+    "interval": 10,
+    "states": {
+      "warning": 25,
+      "critical": 10
+    },
+    "format": "PWR  {capacity:>3}%",
+    "format-charging": "CHG  {capacity:>3}%",
+    "format-plugged": "PWR  AC",
+    "format-full": "PWR  100%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{timeTo}  {power:.1f} W"
   },
 
-  "custom/window-name": {
-    "format": "<b>{}</b>",
-    "interval": 1,
-    "exec": "hyprctl activewindow | grep \"class:\" | awk '{print $2}' | sed 's/\\([[:alpha:]]\\)/\\U\\1/'",
-  },
-
-  "custom/pacman-update": {
-    "format": "󰏔  {}",
-    "interval": 3600,
-    "exec": "$HOME/.config/waybar/scripts/checkupdates | wc -l",
-    "signal": 8,
-  },
-
-  "custom/music": {
-    "format": "{}",
-    "exec": "$HOME/.config/waybar/scripts/caway",
-    "on-click": "playerctl play-pause",
-  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 6
+  }
 }

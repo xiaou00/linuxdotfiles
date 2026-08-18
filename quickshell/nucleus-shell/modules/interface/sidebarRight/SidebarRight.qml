@@ -1,0 +1,99 @@
+import qs.config
+import qs.modules.components
+import qs.modules.functions
+import qs.services
+import QtQuick
+import Quickshell
+import QtQuick.Layouts
+import Quickshell.Wayland
+import Quickshell.Io
+import Quickshell.Hyprland
+import QtQuick.Controls
+import Quickshell.Services.Pipewire
+import Qt5Compat.GraphicalEffects
+
+PanelWindow {
+    id: sidebarRight
+    WlrLayershell.namespace: "nucleus:sidebarleft"
+    WlrLayershell.layer: WlrLayer.Top
+    visible: Config.initialized && Globals.visiblility.sidebarRight && !Globals.visiblility.sidebarLeft
+    color: "transparent"
+    exclusiveZone: 0
+    WlrLayershell.keyboardFocus: Compositor.require("niri") && Globals.visiblility.sidebarRight
+    
+    property var monitor: Hyprland.focusedMonitor
+
+
+    property real sidebarRightWidth: 500
+
+    implicitWidth: sidebarRightWidth
+
+    HyprlandFocusGrab {
+        id: grab
+
+        active: Compositor.require("hyprland")
+        windows: [sidebarRight]
+    }
+
+    anchors {
+        top: true
+        right: (Config.runtime.bar.position === "top" || Config.runtime.bar.position === "bottom" || Config.runtime.bar.position === "right")
+        bottom: true
+        left: (Config.runtime.bar.position === "left")
+    }
+
+    margins {
+        top: Config.runtime.bar.margins
+        bottom: Config.runtime.bar.margins
+        left: Metrics.margin("small")
+        right: Metrics.margin("small")
+    }
+
+    PwObjectTracker {
+        objects: [Pipewire.defaultAudioSink]
+    }
+
+    property var sink: Pipewire.defaultAudioSink?.audio
+
+
+    StyledRect {
+        id: container
+        color: Appearance.m3colors.m3background
+        radius: Metrics.radius("large")
+        implicitWidth: sidebarRight.sidebarRightWidth
+
+        anchors.fill: parent
+
+        FocusScope {
+            focus: true 
+            anchors.fill: parent
+            Keys.onPressed: {
+                if (event.key === Qt.Key_Escape) {
+                    Globals.visiblility.sidebarRight = false;
+                }
+            }
+            SidebarRightContent {
+            }
+        }
+
+    }
+
+    // --- Toggle logic ---
+    function togglesidebarRight() {
+        Globals.visiblility.sidebarRight = !Globals.visiblility.sidebarRight
+    }
+
+    IpcHandler {
+        target: "sidebarRight"
+        function toggle() {
+            togglesidebarRight()
+        }
+    }
+
+    Connections {
+        target: Hyprland
+        function onFocusedMonitorChanged() {
+            sidebarRight.monitor = Hyprland.focusedMonitor
+        }
+    }
+}

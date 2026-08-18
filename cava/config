@@ -20,13 +20,14 @@ channels = stereo
 mono_option = average
 
 [color]
-background = '#101212'
-foreground = '#22aaee'
+background = '#151515'
+foreground = '#f2f2f2'
 gradient = 1
-gradient_count = 3
-gradient_color_1 = '#22aaee'
-gradient_color_2 = '#aa44aa'
-gradient_color_3 = '#ff4444'
+gradient_count = 4
+gradient_color_1 = '#3a3a3a'
+gradient_color_2 = '#888888'
+gradient_color_3 = '#d0d0d0'
+gradient_color_4 = '#ff4444'
 
 [smoothing]
 integral = 77

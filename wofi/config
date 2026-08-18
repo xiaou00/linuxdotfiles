@@ -1,13 +1,15 @@
 [config]
-allow_images=true
-width=500
 show=drun
-prompt=Search
-height=400
-term=kitty
-hide_scroll=true
-print_command=true
+width=560
+height=360
+location=center
+prompt=HEX //
+normal_window=true
+allow_images=false
+matching=fuzzy
 insensitive=true
+hide_scroll=true
 columns=1
 no_actions=true
-
+term=kitty
+filter_rate=24

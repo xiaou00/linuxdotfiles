@@ -1,9 +1,9 @@
-@import url('/home/eli/.cache/wal/colors-waybar.css');
+@import url('../theme/colors.css');
 
-@define-color mauve  @color9;
-@define-color red  @color9;
-@define-color lavender  @color7;
-@define-color text  @color7;
+@define-color mauve @theme_red;
+@define-color red @theme_red;
+@define-color lavender @theme_accent;
+@define-color text @theme_fg2;
 @keyframes fadeIn {
     0% {
     }
@@ -94,4 +94,3 @@ window {
 #entry:drop(active) {
     background-color: @lavender !important;
 }
-

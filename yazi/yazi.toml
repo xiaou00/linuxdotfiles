@@ -1,13 +1,21 @@
 # yazi.toml
 [manager]
 show_hidden = true
+show_symlink = true
+sort_by = "natural"
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+linemode = "size"
+scrolloff = 4
+ratio = [ 1, 3, 4 ]
 
 [opener]
 play = [
 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
 ]
 edit = [
-	{ run = '"neovide" "$@"', orphan=true, block = true, for = "unix" },
+	{ run = '"nvim" "$@"', orphan=true, block = true, for = "unix" },
 ]
 open = [
 	{ run = 'xdg-open "$@"', desc = "Open" },

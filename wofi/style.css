@@ -1,105 +1,124 @@
-/* obsidian-ember */
-@define-color background #101212;
-@define-color mauve  #ff4444;
-@define-color red    #ff4444;
-@define-color lavender #22aaee;
-@define-color text   #d3d3d3;
-@keyframes fadeIn {
-    0% {
-    }
-    100% {
-    }
-}
+@import url("../theme/colors.css");
 
 * {
-    all:unset;
-    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    text-shadow:none;
-    background-color:transparent;
+  all: unset;
+  font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
 }
 
+#window,
 window {
-    all:unset;
-    padding: 20px;
-    border-radius: 0px;
-    background-color: alpha(@background,.5);
+  background-color: rgba(8, 8, 10, 0.82);
+  background-image: url("hex-grid.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: @theme_fg2;
+  border: 1px solid rgba(255, 32, 40, 0.72);
+  border-radius: 7px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.88),
+    0 0 22px rgba(255, 32, 40, 0.14);
 }
-#inner-box {
-    margin: 2px;
-    padding: 5px
-    border: none;
+
+#outer-box {
+  padding: 13px;
+  background-color: rgba(12, 12, 15, 0.28);
 }
-#outer-box {    
-    border: none;
-}
-#scroll {
-    margin: 0px;
-    padding: 30px;
-    border: none;
-}
+
 #input {
-    all:unset;
-    margin-left:20px;
-    margin-right:20px;
-    margin-top:20px;
-    padding: 20px;
-    border: none;
-    outline: none;
-    color: @text;
-    box-shadow: 1px 1px 5px rgba(0,0,0, .5);
-    border-radius:10;
-    background-color: alpha(@background,.2);
-}
-#input image {
-    border: none;
-    color: @red;
-    padding-right:10px;
-}
-#input * {
-    border: none;
-    outline: none;
+  min-height: 22px;
+  margin: 0 0 11px 0;
+  padding: 10px 13px;
+  color: @theme_fg;
+  caret-color: @theme_red;
+  background-color: rgba(18, 18, 22, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-left: 4px solid @theme_red;
+  border-radius: 4px;
+  box-shadow:
+    inset 13px 0 rgba(255, 32, 40, 0.035),
+    0 0 12px rgba(0, 0, 0, 0.42);
+  transition: 120ms ease-out;
 }
 
 #input:focus {
-    outline: none;
-    border: none;
+  border-color: rgba(255, 32, 40, 0.68);
+  border-left-color: @theme_red;
+  box-shadow:
+    inset 16px 0 rgba(255, 32, 40, 0.055),
+    0 0 15px rgba(255, 32, 40, 0.10);
+}
 
-    border-radius:10;
+#input image {
+  color: @theme_red;
+  margin-right: 9px;
 }
-#text {
-    margin: 5px;
-    border: none;
-    color: @text;
-    outline: none;
+
+#scroll {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(6, 6, 8, 0.26);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 4px;
 }
-#text {
-    margin: 5px;
-    border: none;
-    color: @text;
-    outline: none;
+
+#inner-box {
+  margin: 0;
+  padding: 5px;
 }
+
 #entry {
-    border: none;
-    margin: 5px;
-    padding: 10px;
+  min-height: 22px;
+  margin: 2px 0;
+  padding: 8px 11px;
+  color: @theme_muted;
+  background-color: rgba(16, 16, 19, 0.34);
+  border: 1px solid transparent;
+  border-left: 3px solid transparent;
+  border-radius: 3px;
+  transition: 110ms ease-out;
 }
-#entry arrow {
-    border: none;
-    color: @lavender;
 
-}
 #entry:selected {
-    box-shadow: 1px 1px 5px rgba(255,255,255, .03);
-    border: none;
-    border-radius: 20px;
-    background-color:transparent;
+  color: @theme_fg;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 32, 40, 0.22),
+    rgba(31, 23, 26, 0.91) 30%,
+    rgba(19, 19, 23, 0.90)
+  );
+  border-color: rgba(255, 32, 40, 0.34);
+  border-left-color: @theme_red;
+  box-shadow:
+    inset 12px 0 rgba(255, 32, 40, 0.055),
+    0 0 11px rgba(255, 32, 40, 0.09);
 }
+
+#text {
+  margin-left: 4px;
+  color: @theme_fg2;
+}
+
 #entry:selected #text {
-    color: @mauve;
+  color: @theme_fg;
 }
-#entry:drop(active) {
-    background-color: @lavender !important;
+
+#img {
+  margin-right: 9px;
+}
+
+#entry arrow {
+  color: @theme_red;
+}
+
+scrollbar,
+scrollbar slider {
+  min-width: 0;
+  min-height: 0;
+  opacity: 0;
 }

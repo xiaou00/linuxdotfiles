@@ -31,6 +31,10 @@ set recolor-darkcolor  "#d3d3d3"
 set scroll-step           50
 set zoom-step             10
 set adjust-open           "best-fit"
+set database              sqlite
+set continuous-hist-save  true
+set filemonitor           signal
+set open-first-page       false
 set statusbar-home-tilde  true
 set window-title-basename true
 set selection-clipboard   clipboard

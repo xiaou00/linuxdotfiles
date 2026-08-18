@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="360" viewBox="0 0 560 360">
+  <defs>
+    <pattern id="hex-grid" width="44" height="76.210" patternUnits="userSpaceOnUse">
+      <path d="M22 12.702 44 25.403V50.807L22 63.508 0 50.807V25.403ZM22 0V12.702M22 63.508V76.210"
+            fill="none" stroke="#ff2028" stroke-width="1.15"/>
+    </pattern>
+    <linearGradient id="lattice-fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.78"/>
+      <stop offset="0.48" stop-color="#fff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.08"/>
+    </linearGradient>
+    <mask id="fade-mask">
+      <rect width="560" height="360" fill="url(#lattice-fade)"/>
+    </mask>
+  </defs>
+
+  <rect width="560" height="360" fill="#070709" fill-opacity="0.18"/>
+  <rect width="560" height="360" fill="url(#hex-grid)" opacity="0.42" mask="url(#fade-mask)"/>
+
+  <!-- Flat cells with stepped opacity echo the compositor's frosted hexes. -->
+  <g fill="#050507" stroke="#ff2028" stroke-width="1.15">
+    <path d="M22 12.6 44 25.3 44 50.7 22 63.4 0 50.7 0 25.3Z" fill-opacity="0.54" stroke-opacity="0.52"/>
+    <path d="M66 50.7 88 63.4 88 88.8 66 101.5 44 88.8 44 63.4Z" fill-opacity="0.38" stroke-opacity="0.40"/>
+    <path d="M110 88.8 132 101.5 132 126.9 110 139.6 88 126.9 88 101.5Z" fill-opacity="0.25" stroke-opacity="0.31"/>
+    <path d="M22 164.9 44 177.6 44 203.0 22 215.7 0 203.0 0 177.6Z" fill-opacity="0.42" stroke-opacity="0.38"/>
+    <path d="M66 203.0 88 215.7 88 241.1 66 253.8 44 241.1 44 215.7Z" fill-opacity="0.30" stroke-opacity="0.31"/>
+    <path d="M110 241.1 132 253.8 132 279.2 110 291.9 88 279.2 88 253.8Z" fill-opacity="0.18" stroke-opacity="0.24"/>
+  </g>
+
+  <path d="M0 1H184" stroke="#ff2028" stroke-width="2" stroke-opacity="0.92"/>
+  <path d="M559 359H376" stroke="#ff2028" stroke-width="2" stroke-opacity="0.46"/>
+</svg>

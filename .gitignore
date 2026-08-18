@@ -1,0 +1,31 @@
+# Credentials and session data
+**/.env
+**/.env.*
+**/*credentials*.json
+**/*token*.json
+**/*.pem
+**/*.key
+
+# Application-specific secrets and volatile state
+fcitx/dbus/
+fcitx5/conf/cached_layouts
+htop/htop_history
+spotatui/client.yml
+spotatui/history/
+spotatui/*recap*
+spotatui/streaming_cache/
+spotatui/*panic*
+spotify/prefs
+spotify/Users/
+spotifyd/spotifyd.conf
+
+# Caches, logs, and editor noise
+**/cache/
+**/Cache/
+**/*.log
+**/.DS_Store
+**/*~
+**/*.swp
+
+# Nested repositories are backed up separately
+nvim/

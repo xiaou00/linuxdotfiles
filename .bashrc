@@ -2,6 +2,7 @@
 clear && myfetch -c 8 -C " █"
 eval "$(starship init bash)"
 [[ $- != *i* ]] && return
+[[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/theme/bashrc" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/theme/bashrc"
 alias lsd='eza --icons'
 alias pacup='sudo pacman -Rns $(pacman -Qdtq)'
 alias grep='grep --color=auto'

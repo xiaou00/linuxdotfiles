@@ -1,0 +1,55 @@
+[general]
+import = ["~/.config/alacritty/theme.toml"]
+live_config_reload = true
+ipc_socket = true
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 5, y = 5 }
+dynamic_padding = false
+decorations = "None"
+# Draw a transparent background from the first frame.
+opacity = 0.95
+blur = false
+dynamic_title = true
+class = { instance = "Alacritty", general = "Alacritty" }
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 11.0
+normal = { family = "VictorMono Nerd Font Mono", style = "Regular" }
+bold = { family = "VictorMono Nerd Font Mono", style = "Bold" }
+italic = { family = "VictorMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "VictorMono Nerd Font Mono", style = "Bold Italic" }
+offset = { x = 0, y = 1 }
+
+# Cursor and selection colors come from the shared theme import above.
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+unfocused_hollow = true
+thickness = 0.15
+
+[terminal]
+shell = { program = "/usr/bin/fish" }
+
+[bell]
+animation = "Linear"
+duration = 0
+
+[selection]
+save_to_clipboard = false
+
+[mouse]
+hide_when_typing = true
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Control|Shift"
+action = "SpawnNewInstance"

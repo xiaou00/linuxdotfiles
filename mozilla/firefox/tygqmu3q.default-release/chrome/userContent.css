@@ -1,0 +1,34 @@
+@import url("theme.css");
+
+@-moz-document url("about:blank"),
+               url("about:home"),
+               url("about:newtab"),
+               url-prefix("about:privatebrowsing") {
+  html,
+  body,
+  body.activity-stream,
+  #root {
+    background: var(--tui-bg) !important;
+    color: var(--tui-fg-2) !important;
+  }
+
+  .search-wrapper .search-handoff-button,
+  .search-wrapper input,
+  .top-site-outer .tile,
+  .card-outer {
+    background: var(--tui-bg-2) !important;
+    color: var(--tui-fg-2) !important;
+    border: 1px solid var(--tui-bg-3) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* BananaSpace leaves body text color unset on a light background. */
+@-moz-document domain("bananaspace.org") {
+  body,
+  .b-page-body,
+  .mw-parser-output {
+    color: #202122;
+  }
+}

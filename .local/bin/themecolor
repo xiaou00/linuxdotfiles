@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+theme_dir="${XDG_CONFIG_HOME:-$HOME/.config}/theme"
+case "${1:-}" in
+    -h|--help)
+        cat <<'EOF'
+用法：themecolor [#RRGGBB|RRGGBB|--reset]
+
+不带参数：显示当前背景色。
+指定颜色：修改当前深色/浅色模式的背景，同时生成面板和边框层次色。
+--reset ：恢复当前模式的原始背景；保留字体色、强调色和透明度。
+深色默认 #151515，浅色默认 #f7f5f2。两种模式分别保存。
+
+Fish 当前终端直接输入：themecolor #202830（函数自动加载）
+Fish 不要 source Bash 配置；通用写法：themecolor '#202830' 或 themecolor 202830
+Bash 新终端也支持裸 #；已有 Bash 先执行：source ~/.config/theme/bashrc
+Bash 配置关闭交互式 # 注释解析；Fish 只兼容独立的 themecolor #RRGGBB 命令。
+脚本或复合命令请给颜色加引号，或省略 #。
+
+Waybar/Alacritty/Kitty/通知自动刷新；Wofi 下次打开生效。
+Zen/Firefox 的浏览器外框和新标签页配色在重启浏览器后生效。
+EOF
+        ;;
+    "") exec python3 "$theme_dir/theme-color.py" show ;;
+    *)
+        if (( $# != 1 )); then
+            printf '用法：themecolor [#RRGGBB|RRGGBB|--reset]\n' >&2
+            exit 2
+        fi
+        exec bash "$theme_dir/apply-theme.sh" color "$1"
+        ;;
+esac

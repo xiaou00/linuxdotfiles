@@ -1,0 +1,140 @@
+@import url("theme.css");
+
+/* Minimal TUI chrome */
+:root {
+  --tui-font: "JetBrainsMono Nerd Font", "Iosevka", monospace;
+  --tab-min-height: 28px !important;
+  --toolbarbutton-border-radius: 0 !important;
+  --arrowpanel-border-radius: 0 !important;
+}
+
+#browser,
+#appcontent,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+browser[type="content-primary"] {
+  background: var(--tui-bg) !important;
+}
+
+* {
+  font-family: var(--tui-font) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#navigator-toolbox,
+#toolbar-menubar,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar {
+  appearance: none !important;
+  background: var(--tui-bg) !important;
+  color: var(--tui-fg-2) !important;
+  border: 0 !important;
+}
+
+#navigator-toolbox {
+  border-bottom: 1px solid var(--tui-bg-3) !important;
+}
+
+#TabsToolbar {
+  border-bottom: 1px solid var(--tui-bg-3) !important;
+}
+
+.tabbrowser-tab {
+  padding: 0 !important;
+  color: var(--tui-muted) !important;
+}
+
+.tabbrowser-tab .tab-background {
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-right: 1px solid var(--tui-bg-3) !important;
+}
+
+.tabbrowser-tab[selected] {
+  color: var(--tui-fg) !important;
+}
+
+.tabbrowser-tab[selected] .tab-background {
+  background: var(--tui-bg-2) !important;
+  border-bottom: 2px solid var(--tui-accent) !important;
+}
+
+.tabbrowser-tab[pinned] .tab-background {
+  border-top: 2px solid var(--tui-accent) !important;
+}
+
+.tab-close-button {
+  display: none !important;
+}
+
+#nav-bar {
+  min-height: 32px !important;
+  padding: 2px 4px !important;
+}
+
+#urlbar-container {
+  padding-block: 0 !important;
+}
+
+#urlbar-background,
+#searchbar {
+  background: var(--tui-bg-2) !important;
+  border: 1px solid var(--tui-bg-3) !important;
+}
+
+#urlbar[focused] > #urlbar-background {
+  border-color: var(--tui-accent) !important;
+}
+
+#urlbar-input,
+#urlbar-scheme,
+#urlbar .urlbarView-url {
+  color: var(--tui-fg-2) !important;
+}
+
+#urlbar .urlbarView-row[selected] {
+  background: var(--tui-bg-3) !important;
+  color: var(--tui-fg) !important;
+}
+
+toolbarbutton {
+  color: var(--tui-fg-2) !important;
+}
+
+toolbarbutton:hover,
+toolbarbutton[open],
+toolbarbutton[checked] {
+  background: var(--tui-bg-2) !important;
+  color: var(--tui-accent) !important;
+}
+
+menupopup,
+panel,
+.panel-arrowcontent {
+  --panel-background: var(--tui-bg) !important;
+  --panel-color: var(--tui-fg-2) !important;
+  --panel-border-color: var(--tui-bg-3) !important;
+}
+
+menuitem:hover,
+menu:hover {
+  background: var(--tui-bg-2) !important;
+  color: var(--tui-accent) !important;
+}
+
+#sidebar-box,
+#sidebar-header {
+  background: var(--tui-bg) !important;
+  color: var(--tui-fg-2) !important;
+  border-color: var(--tui-bg-3) !important;
+}
+
+#statuspanel-label {
+  background: var(--tui-bg) !important;
+  color: var(--tui-accent) !important;
+  border: 1px solid var(--tui-bg-3) !important;
+  padding: 2px 6px !important;
+}

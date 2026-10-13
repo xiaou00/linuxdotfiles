@@ -1,0 +1,6 @@
+#!/bin/sh
+# surf 2.1 still uses GDK X11 window APIs; force XWayland under Hyprland.
+export GDK_BACKEND=x11
+export WEBKIT_DISABLE_DMABUF_RENDERER=1
+exec /usr/bin/surf "$@"
+

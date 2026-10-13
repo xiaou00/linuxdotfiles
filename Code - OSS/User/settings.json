@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Light Modern",
+    "workbench.preferredDarkColorTheme": "Dark Modern",
+}

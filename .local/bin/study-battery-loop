@@ -1,0 +1,5 @@
+#!/bin/sh
+while true; do
+    /home/xiaou0/.cargo/bin/battery
+    sleep 5
+done

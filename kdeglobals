@@ -1,0 +1,102 @@
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=
+ColorAmount=
+ColorEffect=
+ContrastAmount=
+ContrastEffect=
+Enable=
+IntensityAmount=
+IntensityEffect=
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=
+Color=
+ColorAmount=
+ColorEffect=
+ContrastAmount=
+ContrastEffect=
+Enable=
+IntensityAmount=
+IntensityEffect=
+
+[Colors:Button]
+BackgroundNormal=36,36,36
+DecorationFocus=255,68,68
+DecorationHover=255,68,68
+ForegroundNegative=255,68,68
+ForegroundNeutral=255,68,68
+ForegroundNormal=208,208,208
+ForegroundPositive=242,242,242
+
+[Colors:Selection]
+BackgroundNormal=255,68,68
+DecorationFocus=255,68,68
+DecorationHover=255,68,68
+ForegroundNormal=21,21,21
+
+[Colors:Tooltip]
+BackgroundNormal=36,36,36
+ForegroundNormal=242,242,242
+
+[Colors:View]
+BackgroundAlternate=27,27,27
+BackgroundNormal=21,21,21
+DecorationFocus=255,68,68
+DecorationHover=255,68,68
+ForegroundInactive=136,136,136
+ForegroundNormal=208,208,208
+
+[Colors:Window]
+BackgroundAlternate=36,36,36
+BackgroundNormal=27,27,27
+DecorationFocus=255,68,68
+DecorationHover=255,68,68
+ForegroundInactive=136,136,136
+ForegroundNormal=208,208,208
+
+[General]
+ColorSchemeHash=0a6738db638320ae26da2e4850a4679e3d5bf39e
+LastUsedCustomAccentColor=61,174,233
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=none
+fixed=VictorMono Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+font=VictorMono Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+menuFont=VictorMono Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+smallestReadableFont=VictorMono Nerd Font Mono,8,-1,5,300,0,0,0,0,0,0,0,0,0,0,1,Light,0,0
+toolBarFont=VictorMono Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+
+[Icons]
+Theme=Papirus-Dark
+
+[KDE]
+LookAndFeelPackage=org.kde.breezedark.desktop
+contrast=7
+frameContrast=0.2
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=false
+Speedbar Width=154
+View Style=DetailTree
+
+[WM]
+activeBackground=36,36,36
+activeBlend=27,27,27
+activeFont=VictorMono Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+activeForeground=242,242,242
+inactiveBackground=27,27,27
+inactiveBlend=27,27,27
+inactiveForeground=136,136,136

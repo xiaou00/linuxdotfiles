@@ -1,0 +1,15 @@
+<application>
+  <component name="VimEditorSettings">
+    <editor />
+  </component>
+  <component name="VimSettings">
+    <state version="7" enabled="true" />
+    <notifications>
+      <idea-join enabled="false" />
+      <idea-put enabled="false" />
+      <was-automatically-subscribed-to-eap enabled="false" />
+      <first-ideavim-version value="__NULL_VALUE_CONST__" />
+      <last-ideavim-version value="__NULL_VALUE_CONST__" />
+    </notifications>
+  </component>
+</application>

@@ -1,0 +1,42 @@
+{
+    "files.autoSave": "afterDelay",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "workbench.editor.empty.hint": "hidden",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "latex": true,
+        "cpp": false,
+        "html": true
+    },
+    "manim-sideview.defaultManimPath": "/home/xiaou0/.local/bin/manim",
+    "backgroundCover.imagePath": "/home/xiaou0/壁纸/琪露诺.jpg",
+    "workbench.settings.applyToAllProfiles": [
+
+
+    ],
+    "animations.Install-Method": "Apc Customize UI++",
+    "apc.electron": {
+        "opacity": 0.8,
+        "transparent": true,
+        "backgroundColor": "#00000000",
+        "vibrancy": "ultra-dark"
+    },
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "C_Cpp.clang_format_style": "{ BreakBeforeBraces: Attach, IndentWidth: 4, ColumnLimit: 0, TabWidth: 4, UseTab: Always }",
+    "C_Cpp.codeAnalysis.clangTidy.headerFilter": "",
+    "editor.fontFamily": "JetBrains Mono, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "MacOS Modern Light - Ventura Xcode Low Key",
+    "workbench.preferredDarkColorTheme": "Dark Modern",
+    "workbench.colorTheme": "MacOS Modern Light - Ventura Xcode Low Key",
+    "workbench.productIconTheme": "macos-modern",
+    "workbench.iconTheme": "macos-modern-big-sur-icon-theme",
+    "lean4.alwaysAskBeforeInstallingLeanVersions": false
+}

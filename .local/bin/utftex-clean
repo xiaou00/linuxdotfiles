@@ -1,0 +1,3 @@
+#!/bin/sh
+# Wrapper around utftex: strips trailing whitespace from each line
+utftex "$@" | sed 's/[[:space:]]*$//'

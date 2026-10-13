@@ -1,0 +1,6 @@
+:root {
+  color-scheme: dark;
+  --tui-bg: #151515; --tui-bg-2: #242424; --tui-bg-3: #3a3a3a;
+  --tui-fg: #f2f2f2; --tui-fg-2: #d0d0d0; --tui-muted: #888888;
+  --tui-accent: #ff4444; --tui-error: #ff4444; --tui-ok: #f2f2f2; --tui-warn: #d0d0d0;
+}

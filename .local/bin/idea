@@ -1,0 +1,3 @@
+#!/bin/sh
+# Use the bundled shell launcher; the packaged native launcher exits silently.
+exec /usr/share/idea/bin/idea.sh "$@"

@@ -1,0 +1,19 @@
+{
+  "manifest_version": 4,
+  "type": "theme",
+  "name": "Obsidian Ember TUI",
+  "slug": "obsidian-ember",
+  "description": "Minimal gray, red and white TUI theme for QQNT",
+  "version": "2.0.0",
+  "authors": [
+    {
+      "name": "xiaou0",
+      "link": "https://github.com/xiaou0"
+    }
+  ],
+  "platform": ["linux"],
+  "injects": {
+    "renderer": "renderer.js"
+  }
+}
+

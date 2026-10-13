@@ -1,0 +1,99 @@
+/* Palette mapping without full-page inversion. */
+:root, html, body {
+    color-scheme: dark !important;
+    color: #f2f2f2 !important;
+    background: #151515 !important;
+}
+
+body :where(main, article, section, div, header, footer, aside) {
+    color: #f2f2f2 !important;
+    background-color: transparent !important;
+    border-color: #3a3a3a !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+a, a:visited, strong, mark,
+[class*="accent"], [class*="primary"], [class*="highlight"] {
+    color: #ff4444 !important;
+}
+
+small, figcaption, blockquote, code, pre,
+[class*="muted"], [class*="secondary"], [class*="caption"] {
+    color: #888888 !important;
+    border-color: #3a3a3a !important;
+}
+
+hr, table, th, td, fieldset {
+    border-color: #3a3a3a !important;
+}
+
+/* Rendered document containers use the Kitty canvas directly. */
+embed[type="application/pdf"],
+object[type="application/pdf"],
+canvas,
+svg {
+    color: #f2f2f2 !important;
+    background: #151515 !important;
+    filter: none !important;
+}
+
+/* PDF/SVG viewers often supply their own gray canvas around each page. */
+#viewerContainer, #viewer, .pdfViewer, .pageContainer,
+.page, .spread, [class*="viewerContainer"] {
+    background-color: #151515 !important;
+}
+
+/* Exact SVG palette mappings; never add strokes or recolor every path. */
+svg [fill="white" i], svg [fill="#fff" i], svg [fill="#ffffff" i],
+svg [style*="fill: white" i], svg [style*="fill:#fff" i],
+svg [style*="fill: #fff" i] {
+    fill: #151515 !important;
+}
+
+svg [fill="black" i], svg [fill="#000" i], svg [fill="#000000" i],
+svg [style*="fill: black" i], svg [style*="fill:#000" i],
+svg [style*="fill: #000" i] {
+    fill: #f2f2f2 !important;
+}
+
+svg [stroke="white" i], svg [stroke="#fff" i], svg [stroke="#ffffff" i] {
+    stroke: #151515 !important;
+}
+
+svg [stroke="black" i], svg [stroke="#000" i], svg [stroke="#000000" i] {
+    stroke: #f2f2f2 !important;
+}
+
+/* Common vivid document accents are collapsed into the global red. */
+svg [fill="blue" i], svg [fill="#0000ff" i],
+svg [fill="#22aaee" i], svg [fill="#ff4444" i] {
+    fill: #ff4444 !important;
+}
+
+svg [stroke="blue" i], svg [stroke="#0000ff" i],
+svg [stroke="#22aaee" i], svg [stroke="#ff4444" i] {
+    stroke: #ff4444 !important;
+}
+
+img:not([src$=".svg"]), video {
+    filter: none !important;
+}
+
+::selection {
+    color: #ffffff !important;
+    background: #b52f2f !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #151515 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a3a3a !important;
+    border-radius: 0 !important;
+}

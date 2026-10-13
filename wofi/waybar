@@ -1,8 +1,8 @@
 [config]
 allow_images=true
 show=drun
-width=1200
-height=600
+width=85%
+height=65%
 always_parse_args=true
 show_all=true
 term=kitty
@@ -10,5 +10,5 @@ hide_scroll=true
 print_command=true
 insensitive=true
 columns=1
-image_size=1050
+image_size=800
 

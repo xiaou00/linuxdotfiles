@@ -1,0 +1,12 @@
+[Keyboard]
+RepeatDelay=150
+RepeatRate=65
+
+[Libinput][10182][480][GXTP7863:00 27C6:01E0 Touchpad]
+NaturalScroll=true
+ScrollFactor=2
+
+[Mouse]
+X11LibInputXAccelProfileFlat=true
+cursorSize=32
+cursorTheme=ArcDusk-cursors

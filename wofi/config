@@ -1,9 +1,9 @@
 [config]
 show=drun
-width=560
+width=520
 height=360
 location=center
-prompt=HEX //
+prompt=搜索应用…
 normal_window=true
 allow_images=false
 matching=fuzzy

@@ -1,124 +1,58 @@
-@import url("../theme/colors.css");
+@import url("/home/xiaou0/.config/theme/colors.css");
 
 * {
   all: unset;
-  font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
+  font-family: "VictorMono Nerd Font Mono", "Noto Sans CJK SC", monospace;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 0;
   box-shadow: none;
   text-shadow: none;
 }
 
-#window,
 window {
-  background-color: rgba(8, 8, 10, 0.82);
-  background-image: url("hex-grid.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: alpha(@theme_bg, 0.96);
   color: @theme_fg2;
-  border: 1px solid rgba(255, 32, 40, 0.72);
-  border-radius: 7px;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.88),
-    0 0 22px rgba(255, 32, 40, 0.14);
+  border: 1px solid @theme_bg3;
+  border-radius: 5px;
 }
 
-#outer-box {
-  padding: 13px;
-  background-color: rgba(12, 12, 15, 0.28);
-}
+#outer-box { padding: 12px; }
 
 #input {
-  min-height: 22px;
-  margin: 0 0 11px 0;
-  padding: 10px 13px;
+  min-height: 24px;
+  margin: 0 0 8px;
+  padding: 8px 12px;
   color: @theme_fg;
-  caret-color: @theme_red;
-  background-color: rgba(18, 18, 22, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-left: 4px solid @theme_red;
-  border-radius: 4px;
-  box-shadow:
-    inset 13px 0 rgba(255, 32, 40, 0.035),
-    0 0 12px rgba(0, 0, 0, 0.42);
-  transition: 120ms ease-out;
+  caret-color: @theme_accent;
+  background-color: @theme_bg1;
+  border-bottom: 1px solid @theme_bg3;
+  border-radius: 3px;
+  transition: border-color 120ms ease-out;
 }
 
-#input:focus {
-  border-color: rgba(255, 32, 40, 0.68);
-  border-left-color: @theme_red;
-  box-shadow:
-    inset 16px 0 rgba(255, 32, 40, 0.055),
-    0 0 15px rgba(255, 32, 40, 0.10);
-}
-
-#input image {
-  color: @theme_red;
-  margin-right: 9px;
-}
-
-#scroll {
-  margin: 0;
-  padding: 0;
-  background-color: rgba(6, 6, 8, 0.26);
-  border: 1px solid rgba(255, 255, 255, 0.055);
-  border-radius: 4px;
-}
-
-#inner-box {
-  margin: 0;
-  padding: 5px;
-}
+#input:focus { border-bottom-color: @theme_accent; }
+#input image { color: @theme_muted; margin-right: 8px; }
+#scroll, #inner-box { margin: 0; padding: 0; }
 
 #entry {
-  min-height: 22px;
+  min-height: 24px;
   margin: 2px 0;
-  padding: 8px 11px;
-  color: @theme_muted;
-  background-color: rgba(16, 16, 19, 0.34);
-  border: 1px solid transparent;
-  border-left: 3px solid transparent;
+  padding: 7px 10px;
+  color: @theme_fg2;
+  background-color: transparent;
+  border-left: 2px solid transparent;
   border-radius: 3px;
-  transition: 110ms ease-out;
+  transition: background-color 100ms ease-out;
 }
 
 #entry:selected {
-  color: @theme_fg;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 32, 40, 0.22),
-    rgba(31, 23, 26, 0.91) 30%,
-    rgba(19, 19, 23, 0.90)
-  );
-  border-color: rgba(255, 32, 40, 0.34);
-  border-left-color: @theme_red;
-  box-shadow:
-    inset 12px 0 rgba(255, 32, 40, 0.055),
-    0 0 11px rgba(255, 32, 40, 0.09);
+  background-color: alpha(@theme_accent, 0.10);
+  border-left-color: @theme_accent;
 }
 
-#text {
-  margin-left: 4px;
-  color: @theme_fg2;
-}
-
-#entry:selected #text {
-  color: @theme_fg;
-}
-
-#img {
-  margin-right: 9px;
-}
-
-#entry arrow {
-  color: @theme_red;
-}
-
-scrollbar,
-scrollbar slider {
-  min-width: 0;
-  min-height: 0;
-  opacity: 0;
-}
+#text { margin: 0; color: @theme_fg2; }
+#entry:selected #text { color: @theme_fg; }
+#img { margin-right: 12px; }
+#entry arrow { color: @theme_muted; }
+scrollbar, scrollbar slider { min-width: 0; min-height: 0; opacity: 0; }

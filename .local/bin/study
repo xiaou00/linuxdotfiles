@@ -1,0 +1,97 @@
+#!/usr/bin/env fish
+
+# Study session layout for Hyprland (dwindle)
+# Usage: study [obsidian|nvim]
+#
+# Target layout:
+#   [ left-app | cava | clock | battery ]
+#   [          |      zathura           ]
+#
+# Strategy: new windows auto-grab focus in dwindle, so preselect
+# is always applied to the most recently opened window.
+# Titles use "study-*" prefix to avoid matching any old float rules.
+
+set LEFT_APP (if test (count $argv) -gt 0; echo $argv[1]; else; echo obsidian; end)
+if not contains $LEFT_APP obsidian nvim
+    echo "Usage: study [obsidian|nvim]"; exit 1
+end
+
+set WORKSPACE 9
+
+# --- Switch to workspace and clear it ---
+hyprctl dispatch workspace $WORKSPACE
+sleep 0.3
+
+set addrs (hyprctl clients -j | python3 -c "
+import sys, json
+for c in json.load(sys.stdin):
+    if c['workspace']['id'] == $WORKSPACE:
+        print(c['address'])
+" 2>/dev/null)
+for addr in $addrs
+    hyprctl dispatch closewindow address:$addr
+end
+if test (count $addrs) -gt 0; sleep 0.5; end
+
+# 1. Left app → fills workspace, gets focus
+if test "$LEFT_APP" = nvim
+    hyprctl dispatch exec "kitty --class study-left -e nvim"
+else
+    hyprctl dispatch exec obsidian
+end
+sleep 2.0
+
+# 2. preselect r on left-app → zathura lands on right, gets focus
+hyprctl dispatch layoutmsg preselect r
+hyprctl dispatch exec zathura
+sleep 1.0
+
+# 3. preselect u on zathura → cava lands above zathura, gets focus
+hyprctl dispatch layoutmsg preselect u
+hyprctl dispatch exec "kitty --title study-cava -e cava"
+sleep 0.8
+
+# 4. preselect r on cava → clock lands right of cava, gets focus
+#    Title "study-clock" avoids matching any leftover float windowrules
+hyprctl dispatch layoutmsg preselect r
+hyprctl dispatch exec "kitty --title study-clock --override font_size=7 -e tty-clock -c -C 7 -b -s"
+sleep 0.6
+
+# 5. preselect r on clock → battery lands right of clock, gets focus
+#    Title "study-battery" likewise avoids leftover float rules
+hyprctl dispatch layoutmsg preselect r
+hyprctl dispatch exec "kitty --title study-battery --override font_size=7 -e $HOME/.local/bin/study-battery-loop"
+sleep 0.6
+
+# 6. Set proportions via absolute splitratio (no +/- = absolute value)
+#    from image ref: cava≈28%, clock≈63%, battery≈9%
+#    cava:rest=0.39, clock:battery=7.0, vertical strip:zathura=0.2
+
+# vertical: find zathura (only non-kitty/obsidian tiled window on this workspace)
+set zat (hyprctl clients -j | python3 -c "
+import sys, json
+ws = [c for c in json.load(sys.stdin)
+      if c['workspace']['id'] == $WORKSPACE and not c['floating']]
+zat = [c for c in ws
+       if c.get('title','') not in ('study-cava','study-clock','study-battery')
+       and 'kitty' not in c.get('class','')
+       and 'obsidian' not in c.get('class','').lower()]
+print(zat[0]['address'] if zat else '')
+" 2>/dev/null)
+if test -n "$zat"
+    hyprctl dispatch focuswindow address:$zat
+    sleep 0.2
+    hyprctl dispatch layoutmsg splitratio 0.2
+end
+
+# cava width: 21/(21+77) of strip
+hyprctl dispatch focuswindow title:study-cava
+sleep 0.2
+hyprctl dispatch layoutmsg splitratio 0.273
+
+# clock width: clock:battery = ~3.15 → clock≈76%, battery≈24% (~120px)
+hyprctl dispatch focuswindow title:study-clock
+sleep 0.2
+hyprctl dispatch layoutmsg splitratio 3.15
+
+echo "Study layout opened on workspace $WORKSPACE (left: $LEFT_APP)"

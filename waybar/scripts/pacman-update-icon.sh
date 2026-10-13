@@ -2,8 +2,8 @@
 
 pkgs=$(checkupdates 2>/dev/null | wc -l)
 
-if [ "$pkgs" == 0 ]; then
+if [ "$pkgs" -eq 0 ]; then
     echo ""
 else
-    echo $pkgs
+    echo "󰏖 $pkgs"
 fi

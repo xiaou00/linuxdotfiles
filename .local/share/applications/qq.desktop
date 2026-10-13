@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=QQ
+Exec=/usr/bin/env LITELOADERQQNT_PROFILE=/home/xiaou0/.config/LiteLoaderQQNT /usr/bin/linuxqq %U
+Terminal=false
+Type=Application
+Icon=qq
+StartupWMClass=QQ
+Categories=Network;InstantMessaging;
+Comment=QQ with LiteLoader TUI theme

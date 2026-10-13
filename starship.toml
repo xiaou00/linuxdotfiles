@@ -94,7 +94,7 @@ format = '[$output](bold accent)'
 [custom.arch]
 command = 'test "$TERM" = linux && printf "(Arch)" || printf ""'
 when = true
-format = '[$output](bold accent) '
+format = '[$output](bold accent)  '
 
 [directory.substitutions]
 "Documents" = "󰈙 "

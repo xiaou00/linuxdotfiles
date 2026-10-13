@@ -1,0 +1,17 @@
+@define-color theme_bg #151515;
+@define-color theme_bg1 #1b1b1b;
+@define-color theme_bg2 #242424;
+@define-color theme_bg3 #3a3a3a;
+@define-color theme_fg #f2f2f2;
+@define-color theme_fg2 #d0d0d0;
+@define-color theme_muted #888888;
+@define-color theme_accent #ff4444;
+@define-color theme_red #ff4444;
+@define-color theme_teal #d0d0d0;
+@define-color theme_orange #ff4444;
+@define-color theme_blue #ff4444;
+@define-color theme_green #f2f2f2;
+@define-color theme_yellow #d0d0d0;
+@define-color theme_purple #888888;
+@define-color theme_selection #4a1f1f;
+@define-color theme_search #7a2d2d;

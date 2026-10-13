@@ -1,14 +1,13 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 30,
+  "height": 28,
   "spacing": 0,
-  "margin-top": 7,
-  "margin-right": 7,
-  "margin-bottom": 1,
-  "margin-left": 7,
+  "margin-top": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
   "reload_style_on_change": true,
-
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
@@ -20,18 +19,17 @@
   "modules-right": [
     "cpu",
     "memory",
+    "custom/updates",
     "network",
     "pulseaudio",
     "battery",
     "tray"
   ],
-
   "custom/launcher": {
     "format": "",
     "tooltip": false,
     "on-click": "wofi -n --show drun"
   },
-
   "hyprland/workspaces": {
     "format": "{name}",
     "all-outputs": true,
@@ -40,64 +38,74 @@
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
     "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     }
   },
-
   "hyprland/window": {
-    "format": "  {title}",
+    "format": "{title}",
     "rewrite": {
-      "": "  --"
+      "": ""
     },
     "separate-outputs": true,
-    "max-length": 52,
+    "max-length": 24,
     "tooltip": false
   },
-
   "clock": {
-    "interval": 1,
-    "format": "  {:%H:%M:%S  %Y-%m-%d}",
-    "format-alt": "  {:%A  %d %B %Y}",
+    "interval": 60,
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a · %m/%d}",
     "tooltip-format": "<tt>{calendar}</tt>"
   },
-
   "cpu": {
-    "interval": 2,
-    "format": "CPU  {usage:>2}%",
-    "tooltip": false
+    "interval": 5,
+    "format": " {usage:>2}%",
+    "tooltip": true,
+    "tooltip-format": "CPU · {usage}%"
   },
-
   "memory": {
     "interval": 5,
-    "format": "MEM  {percentage:>2}%",
+    "format": "󰍛 {percentage:>2}%",
     "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB"
   },
-
+  "custom/updates": {
+    "exec": "bash ~/.config/waybar/scripts/pacman-update-icon.sh",
+    "interval": 1800,
+    "tooltip": false
+  },
   "network": {
-    "interval": 3,
-    "format-wifi": "NET  {signalStrength:>3}%",
-    "format-ethernet": "NET  LAN",
-    "format-linked": "NET  LINK",
-    "format-disconnected": "NET  DOWN",
-    "tooltip-format-wifi": "{essid}\n{ipaddr}",
+    "interval": 5,
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-linked": "󰌷",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} · {signalStrength}%\n{ipaddr}",
     "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
     "on-click": "iwgtk"
   },
-
   "pulseaudio": {
-    "format": "VOL  {volume:>3}%",
-    "format-muted": "VOL  MUT",
-    "format-bluetooth": "BT   {volume:>3}%",
-    "format-bluetooth-muted": "BT   MUT",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁",
+    "format-bluetooth": " {volume}%",
+    "format-bluetooth-muted": " 󰖁",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
-    "tooltip": false,
+    "tooltip": true,
     "scroll-step": 2,
     "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip-format": "{desc} · {volume}%"
   },
-
   "battery": {
     "bat": "BAT1",
     "adapter": "ACAD",
@@ -106,16 +114,26 @@
       "warning": 25,
       "critical": 10
     },
-    "format": "PWR  {capacity:>3}%",
-    "format-charging": "CHG  {capacity:>3}%",
-    "format-plugged": "PWR  AC",
-    "format-full": "PWR  100%",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-full": "󰁹 100%",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
     "tooltip-format": "{timeTo}  {power:.1f} W"
   },
-
   "tray": {
-    "icon-size": 15,
+    "icon-size": 14,
     "spacing": 6
   }
 }

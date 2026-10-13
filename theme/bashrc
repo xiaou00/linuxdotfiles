@@ -1,0 +1,8 @@
+# Support `themecolor #RRGGBB` in interactive Bash. Scripts still use '#RRGGBB'.
+if [[ $- == *i* ]]; then
+    shopt -u interactive_comments
+    case ":$PATH:" in
+        *":$HOME/.local/bin:"*) ;;
+        *) export PATH="$HOME/.local/bin:$PATH" ;;
+    esac
+fi

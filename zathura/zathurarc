@@ -1,31 +1,31 @@
 # --- Colors (obsidian-ember) ---
-set default-bg         "#101212"
-set default-fg         "#d3d3d3"
+set default-bg         "#151515"
+set default-fg         "#d0d0d0"
 
-set statusbar-bg       "#1e1e1e"
-set statusbar-fg       "#d3d3d3"
+set statusbar-bg       "#1b1b1b"
+set statusbar-fg       "#d0d0d0"
 
-set inputbar-bg        "#2c2c2c"
-set inputbar-fg        "#d3d3d3"
+set inputbar-bg        "#242424"
+set inputbar-fg        "#d0d0d0"
 
-set notification-bg    "#2c2c2c"
-set notification-fg    "#d3d3d3"
+set notification-bg    "#242424"
+set notification-fg    "#d0d0d0"
 set notification-error-bg   "#ff4444"
-set notification-error-fg   "#101212"
+set notification-error-fg   "#151515"
 set notification-warning-bg "#ffcc00"
-set notification-warning-fg "#101212"
+set notification-warning-fg "#151515"
 
 set highlight-color         "#ff444444"
 set highlight-active-color  "#ff4444aa"
 
-set completion-bg      "#1e1e1e"
-set completion-fg      "#d3d3d3"
+set completion-bg      "#1b1b1b"
+set completion-fg      "#d0d0d0"
 set completion-highlight-bg "#ff4444"
-set completion-highlight-fg "#101212"
+set completion-highlight-fg "#151515"
 
 set recolor true
-set recolor-lightcolor "#101212"
-set recolor-darkcolor  "#d3d3d3"
+set recolor-lightcolor "#151515"
+set recolor-darkcolor  "#d0d0d0"
 
 # --- Behavior ---
 set scroll-step           50

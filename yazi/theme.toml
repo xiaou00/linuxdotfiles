@@ -2,10 +2,10 @@
 
 [manager]
 cwd = { fg = "#ff4444", bold = true }
-hovered = { fg = "#f5f5f5", bg = "#4a1f1f", bold = true }
-preview_hovered = { fg = "#f5f5f5", bg = "#4a1f1f" }
+hovered = { fg = "#f2f2f2", bg = "#4a1f1f", bold = true }
+preview_hovered = { fg = "#f2f2f2", bg = "#4a1f1f" }
 find_keyword = { fg = "#ff4444", bold = true }
-find_position = { fg = "#f5f5f5", bg = "#4a1f1f", bold = true }
+find_position = { fg = "#f2f2f2", bg = "#4a1f1f", bold = true }
 marker_copied = { fg = "#f2f2f2", bg = "#f2f2f2" }
 marker_cut = { fg = "#ff4444", bg = "#ff4444" }
 marker_marked = { fg = "#888888", bg = "#888888" }
@@ -19,24 +19,24 @@ sep_outer = { open = "", close = "" }
 
 [mode]
 normal_main = { fg = "#1e1e1e", bg = "#f2f2f2", bold = true }
-normal_alt = { fg = "#f2f2f2", bg = "#414141" }
+normal_alt = { fg = "#f2f2f2", bg = "#3a3a3a" }
 select_main = { fg = "#1e1e1e", bg = "#b0b0b0", bold = true }
-select_alt = { fg = "#b0b0b0", bg = "#414141" }
-unset_main = { fg = "#f5f5f5", bg = "#a52f2f", bold = true }
-unset_alt = { fg = "#a52f2f", bg = "#414141" }
+select_alt = { fg = "#b0b0b0", bg = "#3a3a3a" }
+unset_main = { fg = "#f2f2f2", bg = "#a52f2f", bold = true }
+unset_alt = { fg = "#a52f2f", bg = "#3a3a3a" }
 
 [status]
-overall = { fg = "#d3d3d3", bg = "#303030" }
+overall = { fg = "#d0d0d0", bg = "#242424" }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
-progress_label = { fg = "#f5f5f5", bold = true }
+progress_label = { fg = "#f2f2f2", bold = true }
 progress_normal = { fg = "#ff4444", bg = "#3a3a3a" }
 progress_error = { fg = "#ff4444", bg = "#4a1f1f" }
 perm_type = { fg = "#ff4444" }
 perm_read = { fg = "#f2f2f2" }
-perm_write = { fg = "#d76a6a" }
+perm_write = { fg = "#ff4444" }
 perm_exec = { fg = "#ff4444" }
-perm_sep = { fg = "#747474" }
+perm_sep = { fg = "#888888" }
 
 [which]
 cols = 2
@@ -49,7 +49,7 @@ separator_style = { fg = "#3a3a3a" }
 
 [confirm]
 border = { fg = "#ff4444" }
-title = { fg = "#f5f5f5", bold = true }
+title = { fg = "#f2f2f2", bold = true }
 content = { fg = "#d0d0d0" }
 list = { fg = "#d0d0d0" }
 btn_yes = { fg = "#151515", bg = "#ff4444", bold = true }
@@ -57,56 +57,56 @@ btn_no = { fg = "#d0d0d0", bg = "#242424" }
 
 [spot]
 border = { fg = "#ff4444" }
-title = { fg = "#f5f5f5", bold = true }
+title = { fg = "#f2f2f2", bold = true }
 tbl_col = { fg = "#ff4444" }
 tbl_cell = { fg = "#d0d0d0" }
 
 [notify]
 title_info = { fg = "#f2f2f2", bold = true }
-title_warn = { fg = "#d76a6a", bold = true }
+title_warn = { fg = "#ff4444", bold = true }
 title_error = { fg = "#ff4444", bold = true }
 
 [pick]
 border = { fg = "#ff4444" }
-active = { fg = "#f5f5f5", bg = "#4a1f1f" }
+active = { fg = "#f2f2f2", bg = "#4a1f1f" }
 inactive = { fg = "#888888" }
 
 [input]
 border = { fg = "#ff4444" }
-title = { fg = "#f5f5f5", bold = true }
+title = { fg = "#f2f2f2", bold = true }
 value = { fg = "#d0d0d0" }
-selected = { fg = "#f5f5f5", bg = "#4a1f1f" }
+selected = { fg = "#f2f2f2", bg = "#4a1f1f" }
 
 [cmp]
 border = { fg = "#ff4444" }
-active = { fg = "#f5f5f5", bg = "#4a1f1f" }
+active = { fg = "#f2f2f2", bg = "#4a1f1f" }
 inactive = { fg = "#888888" }
 
 [tasks]
 border = { fg = "#ff4444" }
-title = { fg = "#f5f5f5", bold = true }
-hovered = { fg = "#f5f5f5", bg = "#4a1f1f" }
+title = { fg = "#f2f2f2", bold = true }
+hovered = { fg = "#f2f2f2", bg = "#4a1f1f" }
 
 [help]
 on = { fg = "#ff4444", bold = true }
 run = { fg = "#f2f2f2" }
 desc = { fg = "#888888" }
-hovered = { fg = "#f5f5f5", bg = "#4a1f1f" }
+hovered = { fg = "#f2f2f2", bg = "#4a1f1f" }
 footer = { fg = "#d0d0d0", bg = "#242424" }
 
 [filetype]
 rules = [
   { url = "*/", fg = "#ff4444", bold = true },
   { mime = "text/*", fg = "#d0d0d0" },
-  { mime = "image/*", fg = "#b8b8b8" },
-  { mime = "{audio,video}/*", fg = "#9b7b7b" },
-  { mime = "application/{zip,gzip,x-tar,x-bzip*,x-7z-compressed,x-rar}", fg = "#d76a6a" },
+  { mime = "image/*", fg = "#d0d0d0" },
+  { mime = "{audio,video}/*", fg = "#888888" },
+  { mime = "application/{zip,gzip,x-tar,x-bzip*,x-7z-compressed,x-rar}", fg = "#ff4444" },
   { mime = "application/{pdf,doc,rtf}", fg = "#f2f2f2" },
-  { url = "*", fg = "#c9c9c9" }
+  { url = "*", fg = "#d0d0d0" }
 ]
 
 [icon]
 prepend_dirs = [
   { name = ".config", text = "󰒓", fg = "#ff4444" },
-  { name = ".git", text = "", fg = "#d76a6a" }
+  { name = ".git", text = "", fg = "#ff4444" }
 ]

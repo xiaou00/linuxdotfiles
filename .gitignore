@@ -26,6 +26,28 @@ spotifyd/spotifyd.conf
 **/.DS_Store
 **/*~
 **/*.swp
+**/*.bak
+**/*.py[cod]
+**/__pycache__/
+**/node_modules/
+theme/.apply.lock
+theme/generation
+
+# Home-level credentials and application/session state
+.ssh/
+.gnupg/
+.aws/
+.claude/
+.codex/
+.serverpassword
+**/*history*
+**/cookies*
+**/logins.json
+**/key4.db
+**/sessionstore*
+**/storage/
+**/globalStorage/
+**/workspaceStorage/
 
 # Nested repositories are backed up separately
 nvim/

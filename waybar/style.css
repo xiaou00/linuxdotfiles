@@ -1,172 +1,113 @@
 @import url("../theme/colors.css");
 
-@define-color bar_bg @theme_bg;
-@define-color bar_surface @theme_bg2;
-@define-color bar_fg @theme_fg;
-@define-color bar_fg2 @theme_fg2;
-@define-color bar_muted @theme_muted;
-@define-color bar_accent @theme_red;
-
+/* Shared theme colors and seamless edges matching Hyprland. */
 * {
   min-height: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
   margin: 0;
-  font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
-  font-size: 11px;
-  font-weight: 600;
+  font-family: "VictorMono Nerd Font Mono", "Noto Sans CJK SC", monospace;
+  font-size: 11pt;
+  font-weight: 400;
   box-shadow: none;
   text-shadow: none;
 }
 
 window#waybar {
-  /* Match Hyprland's Kitty window opacity: $opa_active = 0.92. */
-  background-color: alpha(@bar_bg, 0.92);
-  color: @bar_fg2;
-}
-
-window#waybar.hidden {
-  opacity: 0.20;
-}
-
-#custom-launcher,
-#workspaces,
-#window,
-#clock,
-#cpu,
-#memory,
-#network,
-#pulseaudio,
-#battery,
-#tray {
-  margin: 2px;
-  padding: 0 10px;
-  color: @bar_fg2;
-  background-color: transparent;
+  background-color: alpha(@theme_bg, 0.95);
+  background-image: none;
+  color: @theme_fg2;
   border: 0;
-  border-radius: 3px;
-  transition: 90ms ease-out;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Keep GTK's outer decoration and content box free of edge effects. */
+window#waybar decoration,
+window#waybar > box {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+#custom-launcher, #workspaces, #window, #clock, #cpu, #memory,
+#custom-updates, #network, #pulseaudio, #battery, #tray {
+  padding: 0 6px;
+  color: @theme_fg2;
+  background-color: transparent;
+  transition: background-color 120ms ease-out, color 120ms ease-out;
 }
 
 #custom-launcher {
-  min-width: 28px;
+  min-width: 20px;
+  padding: 0 6px;
   margin-left: 2px;
-  padding: 0 8px;
-  color: @bar_accent;
-  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
-  font-size: 15px;
+  color: @theme_accent;
+  font-size: 14px;
 }
 
-#workspaces {
-  padding: 0 3px;
-}
+#workspaces { padding: 0 2px; }
 
 #workspaces button {
-  min-width: 25px;
-  padding: 0 6px;
-  color: @bar_muted;
+  min-width: 20px;
+  padding: 0 3px;
+  color: @theme_fg2;
   background-color: transparent;
-  border: 0;
-  border-radius: 2px;
-  transition: 90ms ease-out;
+  background-image: none;
+  box-shadow: none;
+  transition: color 120ms ease-out, background-color 120ms ease-out;
 }
 
+#workspaces button.empty { color: @theme_muted; }
+
 #workspaces button:hover {
-  color: @bar_fg;
-  background-color: alpha(@bar_fg, 0.055);
+  color: @theme_fg;
+  background-color: alpha(@theme_fg, 0.04);
 }
 
 #workspaces button.active {
-  color: @bar_accent;
-  background-color: alpha(@bar_fg, 0.045);
+  color: @theme_accent;
 }
 
 #workspaces button.urgent {
-  color: @bar_fg;
-  background-color: alpha(@bar_accent, 0.34);
+  color: @theme_accent;
+  background-color: alpha(@theme_accent, 0.10);
 }
 
-#window {
-  margin-right: 4px;
-  padding: 0 12px;
-  color: @bar_fg2;
+#window { padding: 0 8px; color: @theme_muted; }
+window#waybar.empty #window { padding: 0; }
+#clock { padding: 0 10px; color: @theme_fg; font-weight: 600; }
+#cpu, #memory, #custom-updates { color: @theme_muted; }
+
+#custom-launcher:hover, #clock:hover, #cpu:hover, #memory:hover,
+#custom-updates:hover, #network:hover, #pulseaudio:hover,
+#battery:hover, #tray:hover {
+  color: @theme_fg;
+  background-color: alpha(@theme_fg, 0.04);
 }
 
-#window.empty {
-  color: @bar_muted;
+#network.disconnected, #pulseaudio.muted { color: @theme_muted; }
+#battery.charging, #battery.plugged, #battery.full { color: @theme_fg; }
+#battery.warning:not(.charging):not(.plugged) { color: @theme_accent; }
+#battery.critical:not(.charging):not(.plugged) {
+  color: @theme_accent;
+  background-color: alpha(@theme_accent, 0.12);
 }
 
-#clock {
-  padding: 0 13px;
-  color: @bar_fg;
-}
-
-#cpu,
-#memory,
-#network,
-#pulseaudio,
-#battery {
-  margin-left: 1px;
-  margin-right: 1px;
-}
-
-#custom-launcher:hover,
-#window:hover,
-#clock:hover,
-#cpu:hover,
-#memory:hover,
-#network:hover,
-#pulseaudio:hover,
-#battery:hover,
-#tray:hover {
-  color: @bar_fg;
-  background-color: alpha(@bar_surface, 0.48);
-}
-
-#network.disconnected,
-#pulseaudio.muted {
-  color: @bar_muted;
-}
-
-#battery.charging,
-#battery.plugged,
-#battery.full {
-  color: @bar_fg;
-}
-
-#battery.warning:not(.charging) {
-  color: @bar_accent;
-}
-
-#battery.critical:not(.charging) {
-  color: @bar_fg;
-  background-color: alpha(@bar_accent, 0.48);
-}
-
-#tray {
-  margin-right: 2px;
-  padding-left: 11px;
-  padding-right: 11px;
-}
-
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: alpha(@bar_accent, 0.30);
-}
+#tray { margin-right: 2px; padding: 0 6px; }
+#tray > .passive { opacity: 0.55; }
+#tray > .needs-attention { background-color: alpha(@theme_accent, 0.12); }
 
 tooltip {
-  color: @bar_fg2;
-  background-color: alpha(@bar_bg, 0.92);
+  color: @theme_fg2;
+  background-color: alpha(@theme_bg, 0.95);
   border: 0;
-  border-radius: 3px;
+  border-radius: 0;
+  box-shadow: none;
 }
-
-tooltip label {
-  color: @bar_fg2;
-  padding: 5px 8px;
-}
+tooltip label { color: @theme_fg2; padding: 8px 12px; }
